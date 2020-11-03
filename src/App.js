@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import MyClock from './components/MyClock';
 
 
 
@@ -90,13 +93,20 @@ function App() {
     )
   }
 
+
+
   return (
     <div className="App">
-      <br/>
+     
+        <MyClock/>
+      
+
       {[...Array(count)].map((e, i) => <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> )}
       <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> 
       
       {rooms && rooms.map(room=>renderCard(room))}
+
+     
 
     </div>  
   );
