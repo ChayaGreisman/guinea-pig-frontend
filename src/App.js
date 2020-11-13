@@ -10,14 +10,17 @@ import MyClock from './components/MyClock';
 function App() {
 
   const [count, setCount] = useState(0);
+
   const [rooms, setRooms] = useState([])
 
-
+// componentDidMount equivalent - takes secod argument - dependency array (when it should run). 
+// For componentDidMount, just want it to run once, so empty array
   useEffect(() => {
     fetch("http://localhost:3000/rooms")
     .then(resp=>resp.json())
     .then(rooms=> setRooms(rooms))
-  });
+  }, []);
+// ----------------------------------------------------------------------------
 
   function getTimePassed(updatedTime){
     let milliseconds=Date.now() - new Date(updatedTime)
@@ -100,7 +103,6 @@ function App() {
      
         <MyClock/>
       
-
       {[...Array(count)].map((e, i) => <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> )}
       <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> 
       
