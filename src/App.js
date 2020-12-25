@@ -3,7 +3,6 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import MyClock from './components/MyClock';
 
 
 
@@ -13,7 +12,7 @@ function App() {
 
   const [rooms, setRooms] = useState([])
 
-// componentDidMount equivalent - takes secod argument - dependency array (when it should run). 
+// componentDidMount equivalent - takes second argument - dependency array (when it should run). 
 // For componentDidMount, just want it to run once, so empty array
   useEffect(() => {
     fetch("http://localhost:3000/rooms")
@@ -100,16 +99,13 @@ function App() {
 
   return (
     <div className="App">
-     
-        <MyClock/>
       
       {[...Array(count)].map((e, i) => <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> )}
       <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> 
       
       {rooms && rooms.map(room=>renderCard(room))}
 
-     
-
+  
     </div>  
   );
 }
