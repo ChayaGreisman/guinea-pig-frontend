@@ -97,7 +97,7 @@ function App() {
 
 
   function randomPig(){
-    let pigs = ['./guineaPigGIF.gif', './guineaPig1.png', './guineaPig2.gif']
+    let pigs = ['./guineaPigGIF.gif', './guineaPig1.png', './guineaPig2.gif', './guineaPig3.png']
     return pigs[Math.floor(Math.random() * pigs.length)];
   }
 
