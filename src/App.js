@@ -96,6 +96,11 @@ function App() {
   }
 
 
+  // function randomPig(){
+  //   let pigs = ['./guineaPigGIF.gif', './guineaPig1.png']
+  //   return pigs[Math.floor(Math.random() * pigs.length)];
+  // }
+
 
   return (
     <div className="App">
