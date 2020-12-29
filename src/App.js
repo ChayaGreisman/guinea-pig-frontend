@@ -96,17 +96,17 @@ function App() {
   }
 
 
-  // function randomPig(){
-  //   let pigs = ['./guineaPigGIF.gif', './guineaPig1.png']
-  //   return pigs[Math.floor(Math.random() * pigs.length)];
-  // }
+  function randomPig(){
+    let pigs = ['./guineaPigGIF.gif', './guineaPig1.png', './guineaPig2.gif']
+    return pigs[Math.floor(Math.random() * pigs.length)];
+  }
 
 
   return (
     <div className="App">
       
-      {[...Array(count)].map((e, i) => <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> )}
-      <img src='./guineaPigGIF.gif' onClick={()=>setCount(count+1)} /> 
+      {[...Array(count)].map((e, i) => <img src={randomPig()} onClick={()=>setCount(count+1)} /> )}
+      <img src={randomPig()} onClick={()=>setCount(count+1)} /> 
       
       {rooms && rooms.map(room=>renderCard(room))}
 
