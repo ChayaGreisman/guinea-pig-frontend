@@ -70,3 +70,35 @@ p {
       overflow: hidden;
     }  
 }
+
+
+// The @import directive allows you to include the content of one file in another.
+// It is normal to add the @import directive at the top of a file; this way its content will have a global scope
+    
+    @import "filename";
+    @import "variables";
+    @import "colors";
+    @import "reset";
+
+
+// By default, Sass transpiles all the .scss files directly. However, when you want to import a file, you do not need the file to be transpiled directly.
+// Sass has a mechanism for this: If you start the filename with an underscore, Sass will not transpile it. Files named this way are called partials in Sass.    
+// So, a partial Sass file is named with a leading underscore:
+
+// The following example shows a partial Sass file named "_colors.scss". (This file will not be transpiled directly to "colors.css"):
+
+    // _colors.scss
+
+    $myPink: #EE82EE;
+    $myBlue: #4169E1;
+    $myGreen: #8FBC8F;
+
+// Now, if you import the partial file, omit the underscore. Sass understands that it should import the file "_colors.scss":
+
+    @import "colors";
+
+    body {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    color: $myBlue;
+    }
