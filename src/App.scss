@@ -9,15 +9,64 @@
 
 
 /* Define standard variables and values for website */
-$backgroundColor: lightblue;
-$textColor: darkblue;
-$fontSize: 18px;
-$myFont: Helvetica, sans-serif;
+        $backgroundColor: lightblue;
+        $textColor: darkblue;
+        $fontSize: 18px;
+        $myFont: Helvetica, sans-serif;
 
 /* Use the variables */
-body {
-  background-color: $backgroundColor;
-  color: $textColor;
-  font-size: $fontSize;
-  font-family: $myFont;
+        body {
+        background-color: $backgroundColor;
+        color: $textColor;
+        font-size: $fontSize;
+        font-family: $myFont;
+        }
+
+
+// The default behavior for variable scope can be overridden by using the !global switch.
+
+        $myColor: red;
+
+        h1 {
+        $myColor: green !global;
+        color: $myColor;
+        }
+
+        p {
+        color: $myColor;
+        }
+
+
+// Sass lets you nest CSS selectors in the same way as HTML.
+
+        nav {
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+            }
+            li {
+              display: inline-block;
+            }
+            a {
+              display: block;
+              padding: 6px 12px;
+              text-decoration: none;
+            }
+          }
+
+// Many CSS properties have the same prefix, like font-family, font-size and font-weight or text-align, text-transform and text-overflow.
+// With Sass you can write them as nested properties:
+p {
+    font: {
+      family: Helvetica, sans-serif;
+      size: 18px;
+      weight: bold;
+    }
+  
+    text: {
+      align: center;
+      transform: lowercase;
+      overflow: hidden;
+    }  
 }
