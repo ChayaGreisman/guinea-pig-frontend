@@ -102,3 +102,40 @@ p {
     font-size: 18px;
     color: $myBlue;
     }
+
+
+// The @mixin directive lets you create CSS code that is to be reused throughout the website.
+// The @include directive is created to let you use (include) the mixin.
+
+    // SYNTAX
+    @mixin name {
+        property: value;
+        property: value;
+    }
+
+    selector {
+        @include mixin-name;
+    }
+    // SYNTAX
+
+    // EXAMPLE
+    @mixin important-text {
+        color: red;
+        font-size: 25px;
+        font-weight: bold;
+        border: 1px solid blue;
+    }
+
+    .danger {
+        @include important-text;
+        background-color: green;
+    }
+    // EXAMPLE
+
+// A mixin can also include other mixins:
+
+    @mixin special-text {
+        @include important-text;
+        @include link;
+        @include special-border;
+    }
