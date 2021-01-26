@@ -1,0 +1,23 @@
+// What is Sass?
+// Sass stands for Syntactically Awesome Style Sheet
+// Sass is an extension to CSS
+// Sass is a CSS pre-processor
+// Sass is completely compatible with all versions of CSS
+// Sass reduces repetition of CSS and therefore saves time
+// Sass was designed by Hampton Catlin and developed by Natalie Weizenbaum in 2006
+// Sass is free to download and use
+
+
+/* Define standard variables and values for website */
+$backgroundColor: lightblue;
+$textColor: darkblue;
+$fontSize: 18px;
+$myFont: Helvetica, sans-serif;
+
+/* Use the variables */
+body {
+  background-color: $backgroundColor;
+  color: $textColor;
+  font-size: $fontSize;
+  font-family: $myFont;
+}
