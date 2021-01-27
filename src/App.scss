@@ -139,3 +139,27 @@ p {
         @include link;
         @include special-border;
     }
+
+
+// Mixins accept arguments. This way you can pass variables to a mixin.
+// Here is how to define a mixin with arguments:
+
+/* Define mixin with two arguments */
+    @mixin bordered($color, $width) {
+        border: $width solid $color;
+    }
+
+    .myArticle {
+        @include bordered(blue, 1px);  // Call mixin with two values
+    }
+
+    .myNotes {
+        @include bordered(red, 2px); // Call mixin with two values
+    }
+
+
+// It is also possible to define default values for mixin variables:
+
+    @mixin bordered($color: blue, $width: 1px) {
+        border: $width solid $color;
+    }
