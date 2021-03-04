@@ -101,28 +101,7 @@ function App() {
     return pigs[Math.floor(Math.random() * pigs.length)];
   }
 
-  function submit() {
-    fetch('https://www.boredapi.com/api/activity', {
-        method: "POST",
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          "activity": "Build a treehouse",
-          "type": "diy",
-          "participants": 1,
-          "price": 2.5,
-          "link": "",
-          "key": "5554177",
-          "accessibility": 0.1              
-        })
-    })
-    .then(r=>r.json())
-    .then(activity=>{
-      console.log(activity)
-    })
-  }
+
   
 
   return (
@@ -132,9 +111,6 @@ function App() {
       <img src={randomPig()} onClick={()=>setCount(count+1)} /> 
       
       {rooms && rooms.map(room=>renderCard(room))}
-
-
-      <button onClick={submit()}>send activity</button>
   
     </div>  
   );
