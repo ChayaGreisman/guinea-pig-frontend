@@ -1,4 +1,5 @@
 .App {
   text-align: center;
+  cursor: url('./plants.png'), auto;
 }
 
